@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../redux/CartSlice";
+import { AddItem } from "../redux/CartSlice";
+
 
 const Product = (props) => {
-    const dispatch = useDispatch()
+   const dispatch = useDispatch()
  
   return (
     <div className="card" style={{ width: "18rem;", margin: "10px" }}>
@@ -12,7 +13,7 @@ const Product = (props) => {
         <h5 class="card-title">{props.productName}</h5>
         <p class="card-text">Rs. {props.price}/-</p>
         <button
-           onClick={(e) => dispatch(addItem({name: props.productName, price:props.price}))}
+          onClick={(e) => dispatch( AddItem({name: props.productName, price:props.price  }) )}
           className="btn btn-primary"
         >
           Add to cart
